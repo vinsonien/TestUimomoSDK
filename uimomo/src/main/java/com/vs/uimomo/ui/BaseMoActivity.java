@@ -7,7 +7,6 @@ import android.view.MotionEvent;
 
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
-import butterknife.ButterKnife;
 import me.yokeyword.fragmentation.ExtraTransaction;
 import me.yokeyword.fragmentation.ISupportActivity;
 import me.yokeyword.fragmentation.ISupportFragment;
@@ -45,9 +44,7 @@ public abstract class BaseMoActivity extends RxAppCompatActivity implements ISup
     protected abstract void InitPresenter();
     protected abstract void DestroyPresenter();
 
-    private void BindingView(){
-        ButterKnife.bind(this);
-    }
+    protected abstract  void BindingLayout();
 
 
     //***************** ISupportActivity ********************
@@ -74,7 +71,7 @@ public abstract class BaseMoActivity extends RxAppCompatActivity implements ISup
         mDelegate.onCreate(savedInstanceState);
         onCreateActivity(savedInstanceState);
         setContentView(OnContentView());
-        BindingView();
+        BindingLayout();
         InitPresenter();
         Init();
     }

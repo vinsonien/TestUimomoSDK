@@ -13,7 +13,6 @@ import android.view.animation.Animation;
 
 import com.trello.rxlifecycle.components.support.RxFragment;
 
-import butterknife.ButterKnife;
 import me.yokeyword.fragmentation.ExtraTransaction;
 import me.yokeyword.fragmentation.ISupportFragment;
 import me.yokeyword.fragmentation.SupportFragmentDelegate;
@@ -37,7 +36,7 @@ public abstract class BaseMoFragment extends RxFragment implements ISupportFragm
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(OnContentView(),null);
-        BindingView(view);
+        BindingLayout(view);
         InitPresenter();
         Init();
         return view;
@@ -65,9 +64,7 @@ public abstract class BaseMoFragment extends RxFragment implements ISupportFragm
     protected abstract void InitPresenter();
     protected abstract void DestroyPresenter();
 
-    private void BindingView(View v){
-        ButterKnife.bind(this,v);
-    }
+    protected abstract void BindingLayout(View v);
 
 //**************************** ISupportFragment ***************************
 final SupportFragmentDelegate mDelegate = new SupportFragmentDelegate(this);

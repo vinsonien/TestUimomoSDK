@@ -3,10 +3,13 @@ package com.test.sdk.uimomo.ui;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.View;
 
 import com.vs.uimomo.http.callback.ViewListener;
 import com.vs.uimomo.ui.BaseMoFragment;
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.exception.ApiException;
+
+import butterknife.ButterKnife;
 
 /**
  * @author: S
@@ -18,9 +21,12 @@ public abstract class BaseFragment extends BaseMoFragment implements ViewListene
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
+    @Override
+    protected void BindingLayout(View v) {
+        ButterKnife.bind(this,v);
+    }
 
     @Override
     public void onSuccess(String result, String method) {

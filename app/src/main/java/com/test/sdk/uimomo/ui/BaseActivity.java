@@ -8,6 +8,8 @@ import com.vs.uimomo.http.callback.ViewListener;
 import com.vs.uimomo.ui.BaseMoActivity;
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.exception.ApiException;
 
+import butterknife.ButterKnife;
+
 /**
  * @author: S
  * @date: 2019/5/6 10:09
@@ -20,6 +22,10 @@ public abstract class BaseActivity extends BaseMoActivity implements ViewListene
         super.onCreate(savedInstanceState);
     }
 
+    @Override
+    protected void BindingLayout() {
+        ButterKnife.bind(this);
+    }
 
     @Override
     protected void InitPresenter() {
