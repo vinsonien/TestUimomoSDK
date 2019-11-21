@@ -5,10 +5,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.test.sdk.uimomo.bean.User;
-import com.test.sdk.uimomo.http.ApiConfig;
 import com.test.sdk.uimomo.presenter.TestPresenter;
 import com.test.sdk.uimomo.ui.BaseActivity;
-import com.wzgiceman.rxretrofitlibrary.retrofit_rx.RxRetrofitApp;
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.exception.ApiException;
 
 import butterknife.BindView;
@@ -32,6 +30,7 @@ public class MainActivity extends BaseActivity {
             public void onClick(View v) {
                 User user = new User();
                 userPresent.UserLoginAuth(user);
+
             }
         });
     }
@@ -61,5 +60,20 @@ public class MainActivity extends BaseActivity {
     public void onError(ApiException e, String method) {
         super.onError(e, method);
         Log.e("TAG","method=333333333 ==" + e);
+    }
+
+    @Override
+    public void onNetworkError(String method) {
+
+    }
+
+    @Override
+    public void onShowLoading(String method) {
+
+    }
+
+    @Override
+    public void onHideLoading(String method) {
+
     }
 }

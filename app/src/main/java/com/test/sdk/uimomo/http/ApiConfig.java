@@ -12,4 +12,6 @@ public class ApiConfig {
      */
 
     public static final String ServerDomain = "http://v.juhe.cn";//聚合数据 测试用
+
+
 }

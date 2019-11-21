@@ -36,4 +36,13 @@ public interface ViewListener {
      * @param method
      */
     void onError(ApiException e, String method);
+
+
+    void onNetworkError(String method);
+
+
+    void onShowLoading(String method);
+
+
+    void onHideLoading(String method);
 }
