@@ -9,6 +9,7 @@ import com.test.sdk.uimomo.presenter.TestPresenter;
 import com.test.sdk.uimomo.ui.BaseActivity;
 import com.wzgiceman.rxretrofitlibrary.retrofit_rx.exception.ApiException;
 
+
 import butterknife.BindView;
 
 public class MainActivity extends BaseActivity {
@@ -34,7 +35,6 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
-
 
     @Override
     protected void InitPresenter() {

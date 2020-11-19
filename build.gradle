@@ -24,6 +24,10 @@ allprojects {
     repositories {
         google()
         jcenter()
+        //添加以下
+        maven {
+            url "https://jitpack.io"
+        }
     }
     //bintray 上传使用时 如果要开源的library包含中文的话(包括注释) 需要添加这个
     tasks.withType(Javadoc) {

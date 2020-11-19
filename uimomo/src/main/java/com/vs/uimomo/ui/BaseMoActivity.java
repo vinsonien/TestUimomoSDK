@@ -1,9 +1,10 @@
 package com.vs.uimomo.ui;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.MotionEvent;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
@@ -12,7 +13,6 @@ import me.yokeyword.fragmentation.ISupportActivity;
 import me.yokeyword.fragmentation.ISupportFragment;
 import me.yokeyword.fragmentation.SupportActivityDelegate;
 import me.yokeyword.fragmentation.SupportFragment;
-import me.yokeyword.fragmentation.SupportHelper;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 
 /**
@@ -215,17 +215,17 @@ public abstract class BaseMoActivity extends RxAppCompatActivity implements ISup
         mDelegate.popTo(targetFragmentClass, includeTargetFragment, afterPopTransactionRunnable, popAnim);
     }
 
-    /**
-     * 得到位于栈顶Fragment
-     */
-    public ISupportFragment getTopFragment() {
-        return SupportHelper.getTopFragment(getSupportFragmentManager());
-    }
-
-    /**
-     * 获取栈内的fragment对象
-     */
-    public <T extends ISupportFragment> T findFragment(Class<T> fragmentClass) {
-        return SupportHelper.findFragment(getSupportFragmentManager(), fragmentClass);
-    }
+//    /**
+//     * 得到位于栈顶Fragment
+//     */
+//    public ISupportFragment getTopFragment() {
+//        return SupportHelper.getTopFragment(getSupportFragmentManager());
+//    }
+//
+//    /**
+//     * 获取栈内的fragment对象
+//     */
+//    public <T extends ISupportFragment> T findFragment(Class<T> fragmentClass) {
+//        return SupportHelper.findFragment(getSupportFragmentManager(), fragmentClass);
+//    }
 }

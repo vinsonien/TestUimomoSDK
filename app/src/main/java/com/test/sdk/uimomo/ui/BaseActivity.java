@@ -1,8 +1,9 @@
 package com.test.sdk.uimomo.ui;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.util.Log;
+
+import androidx.annotation.Nullable;
 
 import com.vs.uimomo.http.callback.ViewListener;
 import com.vs.uimomo.ui.BaseMoActivity;

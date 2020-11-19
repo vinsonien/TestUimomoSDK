@@ -4,12 +4,15 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
+
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentActivity;
 
 import com.trello.rxlifecycle.components.support.RxFragment;
 
@@ -38,6 +41,7 @@ public abstract class BaseMoFragment extends RxFragment implements ISupportFragm
         View view=inflater.inflate(OnContentView(),null);
         BindingLayout(view);
         InitPresenter();
+        Init(view);
         Init();
         return view;
     }
@@ -60,6 +64,7 @@ public abstract class BaseMoFragment extends RxFragment implements ISupportFragm
 
     protected abstract void FragmentCreate(Bundle savedInstanceState);
     protected abstract int  OnContentView();
+    protected abstract void Init(View view);
     protected abstract void Init();
     protected abstract void InitPresenter();
     protected abstract void DestroyPresenter();
@@ -396,14 +401,14 @@ final SupportFragmentDelegate mDelegate = new SupportFragmentDelegate(this);
      * @param targetFragmentClass   目标fragment
      * @param includeTargetFragment 是否包含该fragment
      */
-    public void popTo(Class<?> targetFragmentClass, boolean includeTargetFragment) {
-        mDelegate.popTo(targetFragmentClass, includeTargetFragment);
-    }
-
-    /**
-     * 获取栈内的fragment对象
-     */
-    public <T extends ISupportFragment> T findChildFragment(Class<T> fragmentClass) {
-        return SupportHelper.findFragment(getChildFragmentManager(), fragmentClass);
-    }
+//    public void popTo(Class<?> targetFragmentClass, boolean includeTargetFragment) {
+//        mDelegate.popTo(targetFragmentClass, includeTargetFragment);
+//    }
+//
+//    /**
+//     * 获取栈内的fragment对象
+//     */
+//    public <T extends ISupportFragment> T findChildFragment(Class<T> fragmentClass) {
+//        return SupportHelper.findFragment(getChildFragmentManager(), fragmentClass);
+//    }
 }
