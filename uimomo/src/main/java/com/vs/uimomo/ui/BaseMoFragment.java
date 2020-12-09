@@ -41,7 +41,7 @@ public abstract class BaseMoFragment extends RxFragment implements ISupportFragm
         View view=inflater.inflate(OnContentView(),null);
         BindingLayout(view);
         InitPresenter();
-        Init(view);
+        Init(view,savedInstanceState);
         Init();
         return view;
     }
@@ -64,7 +64,7 @@ public abstract class BaseMoFragment extends RxFragment implements ISupportFragm
 
     protected abstract void FragmentCreate(Bundle savedInstanceState);
     protected abstract int  OnContentView();
-    protected abstract void Init(View view);
+    protected abstract void Init(View view,Bundle savedInstanceState);
     protected abstract void Init();
     protected abstract void InitPresenter();
     protected abstract void DestroyPresenter();

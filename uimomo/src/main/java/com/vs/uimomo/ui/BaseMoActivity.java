@@ -41,6 +41,7 @@ public abstract class BaseMoActivity extends RxAppCompatActivity implements ISup
     public void onCreateActivity(Bundle savedInstanceState){}
     protected abstract int OnContentView();
     protected abstract void Init();
+    protected abstract void Init(Bundle savedInstanceState);
     protected abstract void InitPresenter();
     protected abstract void DestroyPresenter();
 
@@ -73,6 +74,7 @@ public abstract class BaseMoActivity extends RxAppCompatActivity implements ISup
         setContentView(OnContentView());
         BindingLayout();
         InitPresenter();
+        Init(savedInstanceState);
         Init();
     }
 

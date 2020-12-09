@@ -1,5 +1,6 @@
 package com.test.sdk.uimomo;
 
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -34,6 +35,11 @@ public class MainActivity extends BaseActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void Init(Bundle savedInstanceState) {
+
     }
 
     @Override
